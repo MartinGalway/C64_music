@@ -1,27 +1,11 @@
 Ocean 1987 Assembler Directives :)
 
-DFS
-"Define Space"
-This simply bumps the program counter up by trhe number of bytes you specify.  E.g. DFS 17 bumps the program counter up by 17 bytes.  So when you run your program, you have 17 undefined bytes in your program (generally used for workspace)
-
-DFL
-"Define Low-Byte Of Word"
-This takes the least-significant 8 bits of any number you supply (can also be labels, expressions etc.) and deposits one byte into your program.
-
-DFH
-"Define High-Byte Of Word"
-This takes bits 8-thru-15 of any number you supply (can also be labels, expressions etc.) and deposits those bits into your program as one byte.
-
-DFM
-"Define Message"
-This is where you would put text into your program like "Hello Mum" or "I Love Gary Bracey."  Or something more useful & relevant to your program lol.  Each character is rendered into your program as ASCII bytes e.g. DFM "RAMBO2"
-
 ORG
 This denotes where your assembled data/code/bytes will go.  e.g. ORG $1000  You can have multiple of these in the source code to put stuff all over the memory map.
 
-ENT
-"Entry Point When Running"
-This denotes where the target computer 6502 will jump to right after assembling and transferring data from the source machine to the target machine.
+DFS
+"Define Space"
+This simply bumps the program counter up by trhe number of bytes you specify.  E.g. DFS 17 bumps the program counter up by 17 bytes.  So when you run your program, you have 17 undefined bytes in your program (generally used for workspace)
 
 DFB
 "Define A Byte"
@@ -31,7 +15,36 @@ DFW
 "Define A Word"
 Takes bits 0-15 of the expression you provide and deposits a 16-bit word into your program.
 
+DFM
+"Define Message"
+This is where you would put text into your program like "Hello Mum" or "I Love Gary Bracey."  Or something more useful & relevant to your program lol.  Each character is rendered into your program as ASCII bytes e.g. DFM "RAMBO2"
+
+DFH
+"Define High-Byte Of Word"
+This takes bits 8-thru-15 of any number you supply (can also be labels, expressions etc.) and deposits those bits into your program as one byte.
+
+DSP
+another variation of "Define Space" I think this fills the memory in with a value that you supply
+
 EQU
 "Equate"
 Pretty similar to any regular assembler directive... defining a label which can subsequently be used in the source code.  (Does not refer explicitly to memory positions assigned during assembly)
 
+DFC
+not entirely sure what this one is... define characters?
+
+ENT
+"Entry Point When Running"
+This denotes where the target computer 6502 will jump to right after assembling and transferring data from the source machine to the target machine.
+
+DFL
+"Define Low-Byte Of Word"
+This takes the least-significant 8 bits of any number you supply (can also be labels, expressions etc.) and deposits one byte into your program.
+
+ADD
+Packages a CLC with an ADC to save you some typing
+
+SUB
+Packages an SEC with an SBC to save you some typing
+
+There are also the expression evaluator items MOD, OR, XOR, DIV and AND.
