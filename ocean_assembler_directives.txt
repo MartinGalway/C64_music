@@ -5,7 +5,8 @@ This denotes where your assembled data/code/bytes will go.  e.g. ORG $1000  You 
 
 DFS
 "Define Space"
-This simply bumps the program counter up by trhe number of bytes you specify.  E.g. DFS 17 bumps the program counter up by 17 bytes.  So when you run your program, you have 17 undefined bytes in your program (generally used for workspace)
+Used with just one parameter, this simply bumps the program counter up by trhe number of bytes you specify.  E.g. DFS 17 bumps the program counter up by 17 bytes.  So when you run your program, you have 17 undefined bytes in your program (generally used for workspace)
+Optionally, you can use it with two parameters, and it will "fill" the space with the value in the second parameter.  So DFS 24, $DD will fill the space with $DD (a common random/magic number I used which would not crop up as a result of code running... so I could assume it was untouched RAM)
 
 DFB
 "Define A Byte"
@@ -24,7 +25,7 @@ DFH
 This takes bits 8-thru-15 of any number you supply (can also be labels, expressions etc.) and deposits those bits into your program as one byte.
 
 DSP
-another variation of "Define Space" I think this fills the memory in with a value that you supply
+not entirely sure what this one is... another variation of "Define Space" ?  check back for the correct definition of this
 
 EQU
 "Equate"
@@ -48,3 +49,6 @@ SUB
 Packages an SEC with an SBC to save you some typing
 
 There are also the expression evaluator items MOD, OR, XOR, DIV and AND.
+
+You can use # on expressions to get bits 0-7 of that expression.  Example #(165+197) would be the same as simply saying 106.
+You can use ^ on expressions to get bits 8-15 of that expression.  Example ^61087 would be the same as simply saying 238.
