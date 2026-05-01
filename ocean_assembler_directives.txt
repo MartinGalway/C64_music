@@ -5,12 +5,12 @@ This denotes where your assembled data/code/bytes will go.  e.g. ORG $1000  You 
 
 DFS
 "Define Space"
-Used with just one parameter, this simply bumps the program counter up by trhe number of bytes you specify.  E.g. DFS 17 bumps the program counter up by 17 bytes.  So when you run your program, you have 17 undefined bytes in your program (generally used for workspace)
+Used with just one parameter, this simply bumps the program counter up by the number of bytes you specify.  E.g. DFS 17 bumps the program counter up by 17 bytes.  So when you run your program, you have 17 undefined bytes in your program (generally used for workspace)
 Optionally, you can use it with two parameters, and it will "fill" the space with the value in the second parameter.  So DFS 24, $DD will fill the space with $DD (a common random/magic number I used which would not crop up as a result of code running... so I could assume it was untouched RAM)
 
 DFB
 "Define A Byte"
-Takes bits 0-7 of the expression you provide and deposits a 16-bit word into your program.  Pretty similar to DFL.  I believe you can say DFB 400 and it will deposit 400-256 (i.e. 144)
+Takes bits 0-7 of the expression you provide and deposits an 8-bit byte into your program.  Pretty similar to DFL.  I believe you can say DFB 400 and it will deposit 400-256 (i.e. 144).  You can put multiple bytes into your program with one statement with the bytes separated by commas, e.g. DFB 49,34,212,COUNTER, 0, 0. STACK+3, end_of_line
 
 DFW
 "Define A Word"
