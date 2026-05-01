@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Build artifacts
+build/out/
+build/*.prg
+build/*.d64
+build/*.log
+
+# KickAssembler debug/side outputs
+*.sym
+*.vs
+*.dbg
+*.bytedump.dmp
+KickAss.log
+
+# VICE session state
+*.vsf
+*.snap
+
+# Editor / tooling
+.vscode/
+.idea/
+.claude/
+*.swp
+
+# Vendored toolchain (KickAssembler download — not ours to redistribute)
+vendor/
