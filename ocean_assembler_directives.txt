@@ -18,7 +18,7 @@ Takes bits 0-15 of the expression you provide and deposits a 16-bit word into yo
 
 DFM
 "Define Message"
-This is where you would put text into your program like "Hello Mum" or "I Love Gary Bracey."  Or something more useful & relevant to your program lol.  Each character is rendered into your program as ASCII bytes e.g. DFM "RAMBO2"
+This is where you would put text into your program like "Hello Mum" or "I Love Gary Bracey."  Or something more useful & relevant to your program lol.  Each character is rendered into your program as PetSCII bytes e.g. DFM "RAMBO2"
 
 DFH
 "Define High-Byte Of Word"
